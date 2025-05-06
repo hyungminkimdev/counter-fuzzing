@@ -49,6 +49,16 @@ Refer to figures in `/figures`:
 - `Execs_Over_Time_Smoothed.png`
 - `html_results_*.png` (internal AFL++ stats)
 
+## 📈 Key Results
+
+![Coverage](./results/plots/Code_Coverage_Over_Time.png)
+*Figure: Code coverage over time*
+
+![Execution Rate](./results/plots/Execs_Over_Time_Smoothed.png)
+*Figure: Execution rate over time*
+
+➡️ See all results in [`/results/plots`](./results/plots)
+
 ---
 
 ## Team Members
