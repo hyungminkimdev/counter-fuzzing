@@ -52,6 +52,12 @@ Refer to figures in `/results/plots`:
 ## 📈 Key Results
 
 <p align="center">
+  <img src="./results/plots/Results_Summary.png" alt="Summary Table" width="600"/>
+  <br/>
+  <em>Figure: Summary of fuzzing results across all strategies</em>
+</p>
+
+<p align="center">
   <img src="./results/plots/Code_Coverage_Over_Time.png" alt="Coverage" width="600"/>
   <br/>
   <em>Figure: Code coverage over time</em>
