@@ -4,7 +4,7 @@ This repository contains the code, evaluation results, and documentation for our
 
 📄 **[Research Paper (PDF)](./CS5590_Counter_Fuzzing_Research_Project_Paper.pdf)**  
 📊 **[Fuzzing Summary Table Screenshot](./Screenshot_2025-04-22.png)**  
-🖼️ **Figures** (see `/figures` folder for all evaluation graphs)
+🖼️ **Figures** (see `/results/plots` folder for all evaluation graphs)
 
 ---
 
