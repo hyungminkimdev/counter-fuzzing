@@ -1,0 +1,9 @@
+bf{"app": {
+  "set": [
+    {   "servlet-name": "cofaxCDSofax.cds.CDSServlet",
+  "init-param": {
+"configGlossary:installationAt": "Philadelphia, PA", "configGlossary:adminEmail": "ksm@pobox.com",
+    "configGlossary:poweredBy": "Cofax",
+"configGlossary:poweredByIcon": "/images/cofax.gif", "configGlossary:staticPatx": "/content/static", "templateProcessorClass": "org.cofax.WysiwygTemplate",
+"templateLoaderClass": "org.cofax.FilesTemplateLoader",
+"templatePath": "templates", "templateOverridePath": "", "defaultListTemplate": "lis

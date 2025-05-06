@@ -1,0 +1,21 @@
+bf{"et": {
+    "g": "on",
+    "ww": {
+    "t": "SampWidget", "name": "main_window",
+"width": 500,
+    "height": 500
+},
+    "image":  "Images",
+    "name": "sun1",
+    "hOffset": 250,
+    "vOffset": 250,
+    "alignment": "center" },
+    "text": {
+        "data": "Ce",
+        "size": 36,
+"style": "bold", "name": "text1",
+        "hOffset": 250,
+        "vOffset": 100,
+        "alignment": "center", "onMouseUp": "s"
+    }
+}}

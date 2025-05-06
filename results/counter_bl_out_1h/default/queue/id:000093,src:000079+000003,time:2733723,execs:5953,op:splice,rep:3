@@ -1,0 +1,11 @@
+bf{"menu": {
+  "id": "file",
+  "value": "File",
+  "popup": {
+    "menuitem": [
+      {"value": "New", "onclick": "CreateNewDoc()"},
+      {"value": "Open", 1"onclick": "OŠenDoc()"},
+      {"value"""""2""""""""""""""pe":+1 "eDoc()"}
+    ]
+  }
+}}
