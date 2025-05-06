@@ -51,11 +51,17 @@ Refer to figures in `/figures`:
 
 ## 📈 Key Results
 
-![Coverage](./results/plots/Code_Coverage_Over_Time.png)
-*Figure: Code coverage over time*
+<p align="center">
+  <img src="./results/plots/Code_Coverage_Over_Time.png" alt="Coverage" width="500"/>
+  <br/>
+  <em>Figure: Code coverage over time</em>
+</p>
 
-![Execution Rate](./results/plots/Execs_Over_Time_Smoothed.png)
-*Figure: Execution rate over time*
+<p align="center">
+  <img src="./results/plots/Execs_Over_Time_Smoothed.png" alt="Execution Rate" width="500"/>
+  <br/>
+  <em>Figure: Execution rate over time</em>
+</p>
 
 ➡️ See all results in [`/results/plots`](./results/plots)
 
