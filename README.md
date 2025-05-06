@@ -56,11 +56,9 @@ Each directory contains instrumented code and AFL run scripts.
 This project was developed as part of the CS5590 System & Software Security course at Virginia Tech.
 
 - **Hyungmin Kim** – [GitHub](https://github.com/hyungminkim-dev)
-- **Chia-Yu Chang** – [GitHub](https://github.com/your-github-chang) *(replace link)*
-- **Hsiang-Jou Chuang** – [GitHub](https://github.com/your-github-chuang) *(replace link)*
-- **Sheng-Fang Chien** – [GitHub](https://github.com/your-github-chien) *(replace link)*
-
-> 🔧 Please replace placeholder GitHub links with actual URLs.
+- **Chia-Yu Chang** – [GitHub](https://github.com/chickk)
+- **Hsiang-Jou Chuang** – [GitHub](https://github.com/kimiichuang)
+- **Sheng-Fang Chien** – [GitHub](https://github.com/Serenechien0172)
 
 ---
 
