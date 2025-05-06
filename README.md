@@ -3,7 +3,7 @@
 This repository contains the code, evaluation results, and documentation for our research project on **counter-fuzzing**—a defensive software strategy designed to resist coverage-guided fuzzers like AFL++.
 
 📄 **[Research Paper (PDF)](./CS5590_Counter_Fuzzing_Research_Project_Paper.pdf)**  
-📊 **[Fuzzing Summary Table Screenshot](./Screenshot_2025-04-22.png)**  
+📊 **[Fuzzing Summary Table Screenshot](./results/plots/Results_Summary.png)**  
 🖼️ **Figures** (see `/results/plots` folder for all evaluation graphs)
 
 ---
@@ -44,7 +44,7 @@ Each directory contains instrumented code and AFL run scripts.
 | Counter-Fuzzing (IDD)| 17.07        | 533           | 0       | Stealthy with good coverage |
 | Counter-Fuzzing (DSM)| 0.03         | 11            | 0       | Blocks fuzzing completely   |
 
-Refer to figures in `/figures`:
+Refer to figures in `/results/plots`:
 - `Code_Coverage_Over_Time.png`
 - `Execs_Over_Time_Smoothed.png`
 - `html_results_*.png` (internal AFL++ stats)
@@ -52,13 +52,13 @@ Refer to figures in `/figures`:
 ## 📈 Key Results
 
 <p align="center">
-  <img src="./results/plots/Code_Coverage_Over_Time.png" alt="Coverage" width="500"/>
+  <img src="./results/plots/Code_Coverage_Over_Time.png" alt="Coverage" width="600"/>
   <br/>
   <em>Figure: Code coverage over time</em>
 </p>
 
 <p align="center">
-  <img src="./results/plots/Execs_Over_Time_Smoothed.png" alt="Execution Rate" width="500"/>
+  <img src="./results/plots/Execs_Over_Time_Smoothed.png" alt="Execution Rate" width="600"/>
   <br/>
   <em>Figure: Execution rate over time</em>
 </p>
