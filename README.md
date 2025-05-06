@@ -1,4 +1,4 @@
-# 🛡️ Counter-Fuzzing: Stealthy and Effective Techniques Against Coverage-Guided Fuzzers
+# Counter-Fuzzing: Stealthy and Effective Techniques Against Coverage-Guided Fuzzers
 
 This repository contains the code, evaluation results, and documentation for our research project on **counter-fuzzing**—a defensive software strategy designed to resist coverage-guided fuzzers like AFL++.
 
@@ -8,7 +8,7 @@ This repository contains the code, evaluation results, and documentation for our
 
 ---
 
-## 🔍 Overview
+## Overview
 
 Coverage-guided fuzzing is one of the most effective methods for vulnerability discovery. However, its widespread usage also exposes programs to automated reverse engineering and black-box fuzzing attacks.
 
@@ -22,7 +22,7 @@ All techniques were integrated into the [`cJSON`](https://github.com/DaveGamble/
 
 ---
 
-## 🛠️ Implementation
+## Implementation
 
 Each strategy was implemented and tested on top of the `cjson-1.7.7` benchmark:
 
@@ -35,7 +35,7 @@ Each directory contains instrumented code and AFL run scripts.
 
 ---
 
-## 📈 Results Summary
+## Results Summary
 
 | Strategy              | Max Coverage | Avg Exec/sec | Crashes | Comments                    |
 |----------------------|--------------|---------------|---------|-----------------------------|
@@ -44,14 +44,14 @@ Each directory contains instrumented code and AFL run scripts.
 | Counter-Fuzzing (IDD)| 17.07        | 533           | 0       | Stealthy with good coverage |
 | Counter-Fuzzing (DSM)| 0.03         | 11            | 0       | Blocks fuzzing completely   |
 
-📌 Refer to figures in `/figures`:
+Refer to figures in `/figures`:
 - `Code_Coverage_Over_Time.png`
 - `Execs_Over_Time_Smoothed.png`
 - `html_results_*.png` (internal AFL++ stats)
 
 ---
 
-## 👥 Team Members
+## Team Members
 
 This project was developed as part of the CS5590 System & Software Security course at Virginia Tech.
 
@@ -62,7 +62,7 @@ This project was developed as part of the CS5590 System & Software Security cour
 
 ---
 
-## 🧪 Experimental Setup
+## Experimental Setup
 
 - **Fuzzer**: AFL++ 4.09c in QEMU mode
 - **Target Program**: `cjson-1.7.7`
@@ -71,18 +71,18 @@ This project was developed as part of the CS5590 System & Software Security cour
 
 ---
 
-## 🪜 How to Reproduce (Step-by-Step)
+## How to Reproduce (Step-by-Step)
 
 This section provides a complete guide to reproducing our experiments using **AFL++**, **FoRTE-FuzzBench**, and `cJSON`. We evaluated four experimental setups:
 
-- 🟢 `baseline` — No counter-fuzzing
-- 🔵 `bl` — Static busy loop inserted
-- 🟠 `idd` — Input-dependent delay based on input hash
-- 🟣 `dsm` — Dynamic self-modifying control redirection (optional enhancement)
+- `baseline` — No counter-fuzzing
+- `bl` — Static busy loop inserted
+- `idd` — Input-dependent delay based on input hash
+- `dsm` — Dynamic self-modifying control redirection (optional enhancement)
 
 ---
 
-### ☁️ 1. Launch AWS EC2 (Ubuntu 22.04)
+### 1. Launch AWS EC2 (Ubuntu 22.04)
 
 - Instance type: `t2.medium` or higher
 - Security group: Allow SSH (port 22)
@@ -95,7 +95,7 @@ ssh -i "afl-key.pem" ubuntu@<your-ec2-ip>
 
 ---
 
-### 🔧 2. Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -105,7 +105,7 @@ sudo apt install -y build-essential clang libgpg-error-dev libfontconfig1-dev li
 
 ---
 
-### 🧬 3. Install AFL++
+### 3. Install AFL++
 
 ```bash
 sudo apt install afl++ -y
@@ -114,7 +114,7 @@ afl-fuzz --help
 
 ---
 
-### 📦 4. Clone FoRTE-FuzzBench and Extract cJSON
+### 4. Clone FoRTE-FuzzBench and Extract cJSON
 
 ```bash
 git clone https://github.com/FoRTE-Research/FoRTE-FuzzBench.git
@@ -125,7 +125,7 @@ cd cjson-1.7.7
 
 ---
 
-### ⚙️ 5. Build cJSON and Fuzz Target (for all versions)
+### 5. Build cJSON and Fuzz Target (for all versions)
 
 ```bash
 # Compile libraries
@@ -141,11 +141,11 @@ gcc -Wall -pedantic -g -O2 -o cjson cjson.c ../libcjson.a ../libcjson_utils.a
 
 ---
 
-## 🔬 Variant-Specific Setups
+## Variant-Specific Setups
 
 ---
 
-### 🟢 Baseline (No counter-fuzzing)
+### Baseline (No counter-fuzzing)
 
 ```bash
 mkdir -p seed_dir baseline_out
@@ -157,7 +157,7 @@ afl-fuzz -i seed_dir -o baseline_out -x json.dict -t 2000+ -- ./cjson @@
 
 ---
 
-### 🔵 BL (Busy Loop)
+### BL (Busy Loop)
 
 **Edit `parse_value()` in `cJSON.c`**:
 
@@ -189,7 +189,7 @@ afl-fuzz -i seed_dir -o bl_out -x json.dict -t 2000+ -- ./cjson @@
 
 ---
 
-### 🟠 IDD (Input-Dependent Delay)
+### IDD (Input-Dependent Delay)
 
 **Edit `parse_value()` in `cJSON.c`**:
 
@@ -239,7 +239,7 @@ afl-fuzz -i seed_dir -o idd_out -x json.dict -t 2000+ -- ./cjson @@
 
 ---
 
-### 🟣 DSM (Dynamic Control Flow Redirection)
+### DSM (Dynamic Control Flow Redirection)
 
 **Modify `cjson.c` or `afl.c` to insert logic that alters execution path dynamically.**
 
@@ -266,7 +266,7 @@ DSM_ENABLE=1 afl-fuzz -i seed_dir -o dsm_out -x json.dict -t 2000+ -- ./cjson @@
 
 ---
 
-### 📊 Visualization and Comparison
+### Visualization and Comparison
 
 ```bash
 afl-plot baseline_out        # → baseline_out/index.html
@@ -280,7 +280,7 @@ Open each folder’s `index.html` file to visually compare throughput, edge cove
 
 ---
 
-## 🛡️ Use Cases
+## Use Cases
 
 Counter-fuzzing is particularly useful for:
 
@@ -290,7 +290,7 @@ Counter-fuzzing is particularly useful for:
 
 ---
 
-## 📌 Future Work
+## Future Work
 
 - Extend testing to grammar-based or concolic fuzzers
 - Design adaptive (runtime-reactive) defenses
